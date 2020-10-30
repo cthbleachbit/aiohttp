@@ -45,7 +45,10 @@ from urllib.request import getproxies
 import async_timeout
 import attr
 from multidict import MultiDict, MultiDictProxy
-from typing_extensions import Protocol, final
+try:
+    from typing import Protocol, final
+except ImportError:
+    from typing_extensions import Protocol, final
 from yarl import URL
 
 from . import hdrs
